@@ -62,7 +62,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/iconv"] = None
         self.runtimeDependencies["libs/fontconfig"] = None
         self.runtimeDependencies["data/poppler-data"] = None
-        self.runtimeDependencies["libs/qt5/qtbase"] = None
+        # self.runtimeDependencies["libs/qt5/qtbase"] = None
 
 
 class Package(CMakePackageBase):
@@ -70,4 +70,4 @@ class Package(CMakePackageBase):
         CMakePackageBase.__init__(self)
 
         self.subinfo.options.package.packageName = "poppler"
-        self.subinfo.options.configure.args = "-DENABLE_XPDF_HEADERS=ON -DENABLE_ZLIB=ON -DENABLE_LIBCURL=ON -DENABLE_UTILS=ON -DENABLE_LIBOPENJPEG=openjpeg2 -DENABLE_GLIB=OFF"
+        self.subinfo.options.configure.args = "-DENABLE_LIBOPENJPEG=openjpeg2 -DBUILD_GTK_TESTS=OFF -DBUILD_QT5_TESTS=OFF -DBUILD_CPP_TESTS=OFF -DENABLE_SPLASH=OFF -DENABLE_CPP=OFF -DENABLE_GLIB=OFF -DENABLE_GOBJECT_INTROSPECTION=OFF -DENABLE_QT5=OFF"
