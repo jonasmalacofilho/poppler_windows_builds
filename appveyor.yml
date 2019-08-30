@@ -16,20 +16,19 @@ install:
     & cmd /C "git clone -q --depth=1 git://anongit.kde.org/craftmaster.git C:\CraftMaster\CraftMaster 2>&1"
     & cmd /C "git clone git://anongit.freedesktop.org/poppler/test $env:APPVEYOR_BUILD_FOLDER/../test 2>&1"
     craft craft
-    craft --install-deps poppler
+    craft --install-deps poppler-with-utils
 
 build_script:
 - ps: |
-    craft --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER poppler
+    craft --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER poppler-with-utils
 
 after_build:
 - ps: |
-    craft --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER --package poppler
+    craft --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER --package poppler-with-utils
 
-test_script:
-- ps: |
-   craft --src-dir $env:APPVEYOR_BUILD_FOLDER --test poppler
-
+# test_script:
+# - ps: |
+#    craft --src-dir $env:APPVEYOR_BUILD_FOLDER --test poppler
 
 environment:
     matrix:
