@@ -35,3 +35,6 @@ environment:
     matrix:
     - TARGET: windows-mingw_64-gcc
     - TARGET: windows-msvc2017_64-cl
+
+artifacts:
+  - path: binaries\*
