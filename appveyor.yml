@@ -33,8 +33,8 @@ test_script:
 
 environment:
     matrix:
-    - TARGET: windows-mingw_64-gcc
     - TARGET: windows-msvc2017_64-cl
+    - TARGET: windows-mingw_64-gcc
 
 artifacts:
   - path: binaries\*
