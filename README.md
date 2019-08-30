@@ -1,5 +1,21 @@
-Poppler, a PDF rendering library
-================================
+# Poppler Windows builds
+
+This is a quick hack to build Poppler – more specifically pdfseparate, pdfunite
+and other Poppler utils – for Windows on AppVeyor.
+
+[![Build status](https://ci.appveyor.com/api/projects/status/iwp3bsg09n542m5k?svg=true)](https://ci.appveyor.com/project/jonasmalacofilho/poppler-windows-builds)
+
+Ideally I'll clean this and evolve it into a proper distribution of poppler
+(or, at least, poppler utils) for Windows.  Until then consider this far from
+ready for public consumption.
+
+Currently this consists of (some state of)
+[tsdgeos/poppler_mirror](https://github.com/tsdgeos/poppler_mirror) + a few
+changes to the AppVeyor and Craft configurations.
+
+---
+
+## Poppler, a PDF rendering library
 
 This is Poppler, a library for rendering PDF files, and examining or
 modifying their structure.  Poppler originally came from the XPDF
@@ -11,7 +27,7 @@ programs which call Poppler must be licensed under the GPL as well.
 See the section [History and GPL
 licensing](#history-and-gpl-licensing) for more information.
 
-# Source code
+### Source code
 
 Poppler's source code is maintained as a Git repository in
 [`gitlab.freedesktop.org`][gitlab].  You can fork that repository and
@@ -19,7 +35,7 @@ submit merge requests.
 
 [gitlab]: https://gitlab.freedesktop.org/poppler/poppler
 
-# Reporting bugs
+### Reporting bugs
 
 Please report bugs at
 https://gitlab.freedesktop.org/poppler/poppler/issues
@@ -33,7 +49,7 @@ files that you don't want other people to see, or files whose
 copyright does not allow redistribution; the bug tracker is a public
 resource and attachments are visible to everyone.
 
-# Security
+### Security
 
 Poppler is highly sensitive to security bugs, since it deals mainly
 with untrusted files downloaded from the Internet.
@@ -42,7 +58,7 @@ If you find a crash in Poppler, or if a tool like
 Valgrind/asan/ubsan/msan detect a problem, please report a bug at
 https://gitlab.freedesktop.org/poppler/poppler/issues
 
-# Stable and unstable APIs
+### Stable and unstable APIs
 
 Poppler provides stable, public APIs for its various front-ends, and
 an unstable API for Poppler's own internal use.  The following
@@ -71,7 +87,7 @@ from XPDF and which became the basis for Poppler.
 [Cairo]: https://www.cairographics.org/
 [Qt5]: https://www.qt.io/
 
-# History and GPL licensing
+### History and GPL licensing
 
 Poppler is a fork of the xpdf PDF viewer developed by Derek Noonburg
 of Glyph and Cog, LLC.  The purpose of forking xpdf is twofold.
